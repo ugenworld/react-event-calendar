@@ -13,7 +13,7 @@ export default class CalendarDay extends React.Component {
 
         return (
             <div 
-                onClick={onClick.bind(null, this, day)}
+                onClick={(evt)=>{onClick(this, day, evt)}}
                 className={dayClasses}>
                 <div className="inner-grid">
                     <div className="date">

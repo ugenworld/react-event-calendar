@@ -16,9 +16,9 @@ class CalendarEvent extends React.Component {
       this.sharedArguments = [null, this, nextProps.eventData, nextProps.day];
     }
 
-    handleClick(e) {
-        this.props.onClick(...this.sharedArguments.slice(1));
-        e.stopPropagation();
+    handleClick(evt) {
+        this.props.onClick(...this.sharedArguments.slice(1), evt);
+        evt.stopPropagation();
     }
 
     render() {

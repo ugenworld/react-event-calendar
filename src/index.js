@@ -191,7 +191,7 @@ class EventCalendar extends React.Component {
         return this.getDaysWithEvents().map((day, index) => {
             const isToday = Calendar.interval(day, this.state.today) === 1;
             const events = this.renderEvents(day);
-            
+
             return (
                 <CalendarDay 
                     key={'day_'+this.getSerializedDay(day)}
