@@ -1,5 +1,14 @@
 [![npm version](https://badge.fury.io/js/react-event-calendar.svg)](https://badge.fury.io/js/react-event-calendar)
 
+# Modifications post deprecation by uGen
+
+Modifications:
+* Events returned from day/event click to allow actions on said events
+* Upgrades to base React version and PropTypes
+* Upgrades to Babel plugs and presets to support ES6
+* Removed test (temp)
+
+
 # Project Status
 ## This project has been deprecated. 
 

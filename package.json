@@ -5,17 +5,13 @@
   "author": "James Lewis",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "jest",
-    "test:tdd": "",
-    "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache",
     "gh-pages": "webpack",
     "gh-pages:deploy": "gh-pages -d gh-pages",
     "gh-pages:stats": "webpack --profile --json > stats.json",
     "dist": "webpack --display-error-details && node-sass style.css dist/style.css",
     "dist:min": "webpack --display-error-details",
     "dist:modules": "babel ./src --out-dir ./dist-modules",
-    "pretest": "npm run test:lint",
-    "preversion": "npm run test && npm run dist && npm run dist:min && git commit --allow-empty -am \"Update dist\"",
+    "preversion": "npm run dist && npm run dist:min && git commit --allow-empty -am \"Update dist\"",
     "prepublish": "npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
@@ -48,17 +44,15 @@
     "highlight.js": "^9.3.0",
     "html-webpack-plugin": "^2.15.0",
     "isparta-instrumenter-loader": "^1.0.0",
-    "jest-cli": "^12.0.2",
     "json-loader": "^0.5.4",
     "moment": "^2.13.0",
     "node-sass": "^3.6.0",
     "postcss-loader": "^0.8.2",
     "prop-types": "^15.5.10",
     "purecss": "^0.6.0",
-    "react": "^15.0.0",
-    "react-addons-test-utils": "^15.0.1",
+    "react": "^15.5.4",
     "react-bootstrap": "^0.29.3",
-    "react-dom": "^15.0.0",
+    "react-dom": "^15.5.4",
     "react-ghfork": "^0.3.3",
     "react-modal": "^1.2.1",
     "react-tooltip": "^2.0.0",
@@ -78,13 +72,6 @@
   "peerDependencies": {
     "react": ">= 0.11.2 < 16.0.0"
   },
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/react-addons-test-utils"
-    ]
-  },
   "homepage": "https://github.com/dptoot/react-event-calendar",
   "repository": {
     "type": "git",
@@ -99,10 +86,6 @@
     "react-component"
   ],
   "license": "MIT",
-  "pre-push": [
-    "test",
-    "test:lint"
-  ],
   "dependencies": {
     "calendar-base": "^0.2.1",
     "classnames": "^2.2.4"
